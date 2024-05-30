@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const baseURL = "http://127.0.0.1:8000/api/";
+const URL = "http://127.0.0.1:8000/api/";
 
 export const check=(message, setMessage)=>{
-    axios.get('http://127.0.0.1:8000/api/main/')
+    axios.get(`${URL}home/`)
       .then(response => {
         setMessage(response.data.message);
       })
