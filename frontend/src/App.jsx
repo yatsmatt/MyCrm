@@ -1,28 +1,23 @@
-import { useState,useEffect } from 'react'
-import {check} from "./Api/Api"
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import  Error from './componenets/Error'
+import  Home from './componenets/Home'
+import Signin from './componenets/Signin'
+import Header from './componenets/Header' 
 import './App.css'
+import Signup from './componenets/Signup'
 
 
 function App() {
-
-  const [message, setMessage] = useState('hi');
-
-  useEffect(() => {
-    check(message, setMessage)
-  }, []);
-
-
   return (
     <div>
-        <h1 className='text-red-600 text-6xl'>{message} </h1>
-       {/* <BrowserRouter>
+       <BrowserRouter>
+       <Header/>
        <Routes>
-       <Route path='' element={</>}/>
+       <Route path='/' element={<Home/>}/>
+       <Route path='signin' element={<Signin/>}/>
+       <Route path='signup' element={<Signup/>}/>
        </Routes>
-       </BrowserRouter> */}
-       
+       </BrowserRouter>
     </div>
   )
 }
