@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 
 const Signup = () => {
+  
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+    repassword: '',
+    dateOfBirth:''
   });
-  //will be an axios fun here that take mail and pw and will connecte to system
+  //data for backend
   const singInDisplay =[
     {name:"email",value:formData.email,type:"email"},
     {name:"password",value:formData.password,type:"password"},
+    {name:"repassword",value:formData.repassword,type:"password"},
+    {name:"date of birth",value:formData.dateOfBirth,type:"date"},
   ]
   //set a reusable component
   const fieldDisplay=(name,value,type)=>(
