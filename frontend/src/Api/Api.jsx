@@ -11,3 +11,11 @@ export const check=(message, setMessage)=>{
         console.error('There was an error fetching the data!', error);
       });
 }
+// login user (connection)
+// singup user
+//logout user
+// delete a user
+
+// add a lead
+// delete a lead
+ 
