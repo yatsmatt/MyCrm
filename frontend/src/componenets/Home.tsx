@@ -2,10 +2,12 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import {check} from "../Api/Api"
 const Home = () => {
-    const [message, setMessage] = useState('hi');
+    const [message, setMessage] = useState([]);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
       check(message, setMessage)
+      
     }, []);
   
   return (

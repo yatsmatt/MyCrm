@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import {addUser} from "../Api/Api" 
 
 const Signup = () => {
-  
+  //fix here 1. adding a new user dont take the date 
   const [formData, setFormData] = useState({
     email: '',
+    fullname: '',
     password: '',
     repassword: '',
     dateOfBirth:''
@@ -11,9 +13,10 @@ const Signup = () => {
   //data for backend
   const singInDisplay =[
     {name:"email",value:formData.email,type:"email"},
+    {name:"fullname",value:formData.fullname,type:"text"},
     {name:"password",value:formData.password,type:"password"},
     {name:"repassword",value:formData.repassword,type:"password"},
-    {name:"date of birth",value:formData.dateOfBirth,type:"date"},
+    {name:"dateOfBirth",value:formData.dateOfBirth,type:"date"},
   ]
   //set a reusable component
   const fieldDisplay=(name,value,type)=>(
@@ -24,6 +27,7 @@ const Signup = () => {
     name={name}
     value={value}
     onChange={handleChange}
+    
   />
   <label
     className="absolute text-sm  duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -33,7 +37,7 @@ const Signup = () => {
   </label>
 </div>
 )
-const handleChange = (e) => {
+const handleChange =  (e) => {
   const { name, value } = e.target;
   setFormData({
     ...formData,
@@ -41,9 +45,10 @@ const handleChange = (e) => {
   });
 };
 
-const handelSubmit =(e)=>{
+const handelSubmit =async(e)=>{
   e.preventDefault();
-  console.log(formData)
+   addUser(formData)
+   console.log(formData)
 }
   return (
     <div className=' h-[100vh] flex justify-center items-center bg-cover'>
