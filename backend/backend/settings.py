@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'website',
   
 ]
-AUTH_USER_MODEL='website.appUser'
+AUTH_USER_MODEL='website.AppUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,7 +141,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS =['http://localhost:5173']
-
-CORS_ALLOWED_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS =['http://localhost:5173',]
+CORS_ALLOW_CREDENTIALS = True
 
